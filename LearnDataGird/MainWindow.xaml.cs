@@ -24,7 +24,7 @@ namespace LearnDataGird
     public partial class MainWindow : Window
     {
         private readonly DbContext _db;
-        private ObservableCollection<Student> _data;
+        //private ObservableCollection<Student> _data;
         public MainWindow()
         {
             InitializeComponent();
@@ -41,19 +41,19 @@ namespace LearnDataGird
             CommandBindings.Add(binding);            
 
             _db = DbContext.GetInstance();
-            _data = new ObservableCollection<Student>(_db.Data);
-            DataContext = _data;
+            //_data = new ObservableCollection<Student>(_db.Data);
+            DataContext = _db.Data;
         }
         private void OpenCommand(object sender, ExecutedRoutedEventArgs e)
         {
             _db.LoadData();
-            _data = new ObservableCollection<Student>(_db.Data);
-            DataContext = _data;
+            //_data = new ObservableCollection<Student>(_db.Data);
+            //DataContext = _data;
         }
 
         private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {            
-            _db.Data = _data.ToList();
+            //_db.Data = _data.ToList();
             _db.SaveData();
         }
 
