@@ -1,0 +1,31 @@
+﻿<Window x:Class="LearnDataGird.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Command="Open"></MenuItem>
+                <MenuItem Command="Save"></MenuItem>             
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray Grid.Row="1">
+            <ToolBar>
+                <Button Command="Open" Content="{StaticResource OpenIco}"></Button>
+                <Button Command="Save" Content="{StaticResource SaveIco}"></Button>
+            </ToolBar>
+
+        </ToolBarTray>
+        <DataGrid Grid.Row="2" Name="dataGirdNameList" ItemsSource="{Binding}" AutoGenerateColumns="True" />
+    </Grid>
+</Window>
