@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dgx="urn:tom-englert.de/DataGridExtensions"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -26,6 +27,6 @@
             </ToolBar>
 
         </ToolBarTray>
-        <DataGrid Grid.Row="2" Name="dataGirdNameList" ItemsSource="{Binding}" AutoGenerateColumns="True" />
+        <DataGrid Grid.Row="2" Name="dataGirdNameList" ItemsSource="{Binding}" AutoGenerateColumns="True" dgx:DataGridFilter.IsAutoFilterEnabled="True"/>
     </Grid>
 </Window>
